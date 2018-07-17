@@ -15,6 +15,8 @@
     - how to run:
         - `$ make target`: this will install python and create the executables
         - `$ make clean`: this will delete the executables
+        - `$ make puzzles-sat`: this run `sud2sat` on all of the puzzles found at projecteuler.net/project/resources/p096 sudoku.txt. The output files will be located in `./sud2sat_puzzle_output`.
+        - `$ make puzzles-minisat`: this will run minisat on all of the files in `./sud2sat_puzzle_output`. The output files will be located in `./minisat_puzzle_output`
 
 ## Creating the Executable
 

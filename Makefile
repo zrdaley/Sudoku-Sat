@@ -7,3 +7,9 @@ target:
 
 clean:
 		-rm $(OBJECTS)
+
+puzzles-sat:
+		./run_puzzles.sh
+
+puzzles-minisat:
+		./run_minisat.sh

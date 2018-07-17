@@ -4,7 +4,7 @@ import sys
 def write_to_cnf(c):
   output = open('output.txt', 'w')
   output.write('c {}\n'.format(sys.argv[1]))
-  output.write('p cnf {} 729\n'.format(len(c)))
+  output.write('p cnf 729 {}\n'.format(len(c)))
 
   for clause in c:
     output.write(' '.join(map(str, clause)))

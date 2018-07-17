@@ -2,7 +2,7 @@
 import sys
 
 def write_to_cnf(c):
-  output = open('output.txt', 'w')
+  output = open(sys.argv[2], 'w+')
   output.write('c {}\n'.format(sys.argv[1]))
   output.write('p cnf 729 {}\n'.format(len(c)))
 

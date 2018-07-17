@@ -2,7 +2,6 @@ OBJECTS=sud2sat
 
 target:
 		chmod +x sud2sat.py
-		sudo apt install python
 		sudo ln -s sud2sat.py $(OBJECTS) 
 
 clean:

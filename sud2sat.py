@@ -61,7 +61,7 @@ def unit_clauses():
       y += 1
       x = 1
     value = sudoku[i]
-    if value.isdigit() and value > 0:
+    if value.isdigit() and int(value) > 0:
       clauses.append([to_base_9(x, y, int(value))])
     x += 1
 

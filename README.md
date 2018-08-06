@@ -22,6 +22,7 @@
         - `$ make puzzles-sat2sud`: this will run `sat2sud` on all of the files in `./minisat_puzzle_output` and output them into a file called puzzles.txt
         - `$ make puzzles-sat-hi`: this will run `sat2sudHI` on all the puzzles from [here](http://magictour.free.fr/top95). The output files will be located in `./sud2sat_hi_puzzle_output`.
         - `$ make puzzles-minisat-hi`: this will run minisat on all of the files in `./sud2sat_hi_puzzle_output`. The output files will be located in `./minisat_hi_puzzle_output`. Additionally a log file (`minisat_hi_puzzle_logs.txt`) consisting of the CPU time to solve each puzzle will be created.
+         - `$ make puzzles-walksat`: this will run walksat on all of the files in `./sud2sat_puzzle_output`. A log file (`walksat_puzzle_logs.txt`) consisting of the CPU time to solve each puzzle will be created.
 
 ## Creating the Executable
 

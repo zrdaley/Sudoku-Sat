@@ -20,6 +20,7 @@ def at_least_one_num_per_entry():
       for k in range(1, 10):
         clause.append(to_base_9(i, j, k))
       clauses.append(clause)
+  # print 'at_least_one_num_per_entry', len(clauses)
 
 def distinct_row_and_col():
   for i in range(1, 10):
@@ -28,6 +29,8 @@ def distinct_row_and_col():
         for l in range(k+1, 10):
           clauses.append([-to_base_9(i, k, j), -to_base_9(i, l, j)])
           clauses.append([-to_base_9(k, i, j), -to_base_9(l, i, j)])
+  # print 'distinct_row_and_col', len(clauses)
+  
 
 def distinct_sub_grid():
   for i in range(1, 10):
@@ -40,6 +43,8 @@ def distinct_sub_grid():
                 -to_base_9(3 * j + l, 3 * k + m, i), 
                 -to_base_9(3 * j + l, 3 * k + n, i)
               ])
+  # print 'distinct_sub_grid', len(clauses)
+  
 
   for i in range(1, 10): 
     for j in range(0, 3): 
@@ -52,10 +57,14 @@ def distinct_sub_grid():
                   -to_base_9(3 * j + l, 3 * k + m, i), 
                   -to_base_9(3 * j + n, 3 * k + o, i)
                 ])
+  # print 'distinct_sub_grid 2', len(clauses)
+
 
 def unit_clauses():
   x = 1
   y = 1
+  discarded = ''
+  # print sudoku
   for i in range(81):
     if i % 9 == 0 and i != 0:
       y += 1
@@ -63,7 +72,12 @@ def unit_clauses():
     value = sudoku[i]
     if value.isdigit() and int(value) > 0:
       clauses.append([to_base_9(x, y, int(value))])
+    else:
+      discarded += value + '@' + str(i) + ' '
     x += 1
+  # print 'unit_clauses ', len(clauses)
+  # print 'discarded', discarded
+  
 
 
 #read file, remove whitespace, put into a 9x9 array
@@ -71,10 +85,13 @@ sudoku = open(sys.argv[1], 'r')
 sudoku = sudoku.read().replace('\n', '').replace(' ', '')
 clauses = []
 
+print sudoku
+
 at_least_one_num_per_entry()
 distinct_row_and_col()
 distinct_sub_grid()
 assert len(clauses) == 8829
+# print 'BEFORE CALLING '
 unit_clauses()
 
 write_to_cnf(clauses)

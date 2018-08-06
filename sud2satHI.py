@@ -80,6 +80,7 @@ sudoku = open(sys.argv[1], 'r')
 sudoku = convert_minimal_encoding(sudoku)
 clauses = []
 
+print sudoku
 at_least_one_num_per_entry()
 distinct_row_and_col()
 distinct_sub_grid()

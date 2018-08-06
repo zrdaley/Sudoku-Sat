@@ -9,17 +9,22 @@
 - sat2sud.py: converts a CNF DIMACS format file to a sudoku, writes to stdout
     - how to run: `$./sat2sud <src>`
     - input: `<src>`: a single text file containing minisat output
-    - output: N/A
+    - output: to the console, and can be piped into a text file
+   
+- sud2sat2.py: Operated the same as sud2sat.py, except with added support for multiple encodings
 
 - Makefile
     - how to run:
         - `$ make target`: this will install python and create the executables
         - `$ make clean`: this will delete the executables
-        - `$ make puzzles-sat`: this runs `sud2sat` on [this list of puzzles](projecteuler.net/project/resources/p096_sudoku.txt). The output files will be located in `./sud2sat_puzzle_output`.
+        - `$ make puzzles-sat`: this runs `sud2sat` on the list of puzzles contained within the main folder ('puzzles.txt'). The output files will be located in `./sud2sat_puzzle_output`.
+        - `$ make puzzles-sat2`: this runs `sud2sat2` on the list of puzzles contained within the main folder ('puzzles.txt'). The output files will be located in `./sud2sat2_puzzle_output`.
         - `$ make puzzles-minisat`: this will run minisat on all of the files in `./sud2sat_puzzle_output`. The output files will be located in `./minisat_puzzle_output`. Additionally a log file (`minisat_puzzle_logs.txt`) consisting of the CPU time to solve each puzzle will be created.
+        - `$ make puzzles-minisat2`: this will run minisat on all of the files in `./sud2sat2_puzzle_output`. The output files will be located in `./minisat2_puzzle_output`. Additionally a log file (`minisat2_puzzle_logs.txt`) consisting of the CPU time to solve each puzzle will be created.
         - `$ make puzzles-sat2sud`: this will run `sat2sud` on all of the files in `./minisat_puzzle_output` and output them into a file called puzzles.txt
         - `$ make puzzles-sat-hi`: this will run `sat2sudHI` on all the puzzles from [here](http://magictour.free.fr/top95). The output files will be located in `./sud2sat_hi_puzzle_output`.
         - `$ make puzzles-minisat-hi`: this will run minisat on all of the files in `./sud2sat_hi_puzzle_output`. The output files will be located in `./minisat_hi_puzzle_output`. Additionally a log file (`minisat_hi_puzzle_logs.txt`) consisting of the CPU time to solve each puzzle will be created.
+         - `$ make puzzles-walksat`: this will run walksat on all of the files in `./sud2sat_puzzle_output`. A log file (`walksat_puzzle_logs.txt`) consisting of the CPU time to solve each puzzle will be created.
 
 ## Creating the Executable
 

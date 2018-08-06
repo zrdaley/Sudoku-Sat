@@ -13,5 +13,5 @@ cd ..
 rm -r sud2sat_hi_puzzle_output
 mkdir sud2sat_hi_puzzle_output
 for filename in puzzles/*; do
-  ./sud2sat "$filename" "sud2sat_hi_puzzle_output/`basename $filename`"
+  ./sud2satHI "$filename" "sud2sat_hi_puzzle_output/`basename $filename`"
 done

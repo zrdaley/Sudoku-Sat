@@ -9,7 +9,9 @@
 - sat2sud.py: converts a CNF DIMACS format file to a sudoku, writes to stdout
     - how to run: `$./sat2sud <src>`
     - input: `<src>`: a single text file containing minisat output
-    - output: N/A
+    - output: to the console, and can be piped into a text file
+   
+- sud2sat2.py: Operated the same as sud2sat.py, except with added support for multiple encodings
 
 - Makefile
     - how to run:

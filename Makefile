@@ -15,6 +15,9 @@ clean:
 puzzles-sat:
 		./run_puzzles.sh
 
+puzzles-sat-hi:
+	./run_hi_puzzles.sh
+
 puzzles-minisat:
 		./run_minisat.sh
 

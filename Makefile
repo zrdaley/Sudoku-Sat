@@ -6,7 +6,9 @@ target:
 		sudo ln -s sud2sat.py sud2sat
 		chmod +x sat2sud.py
 		sudo ln -s sat2sud.py sat2sud
-
+		chmod +x sud2satHI.py
+		sudo ln -s sud2satHI.py sud2satHI
+		
 clean:
 		-rm $(OBJECTS)
 

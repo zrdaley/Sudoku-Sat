@@ -1,4 +1,4 @@
-OBJECTS=sud2sat sat2sud
+OBJECTS=sud2sat sat2sud sud2satHI
 
 target:
 		chmod +x sud2sat.py
@@ -20,6 +20,9 @@ puzzles-sat-hi:
 
 puzzles-minisat:
 		./run_minisat.sh
+
+puzzles-minisat-hi:
+		./run_minisat_hi.sh
 
 puzzles-sud:
 		./run_sat2sud.sh
